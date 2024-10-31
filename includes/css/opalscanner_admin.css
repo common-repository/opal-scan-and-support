@@ -1,0 +1,506 @@
+.opalhide{display:none!important;}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+.opalsitescannerpage,
+.opalscanner_results,
+#scanbarcontrols {
+    max-width: 1400px;
+    margin: 20px auto;
+}
+.opalsitescannerpage h1{font-size: 34px;}
+.opalsitescannerpage p{font-size: 16px;}
+.opalsitescannerpage .opaldoscan{cursor: pointer;}
+
+/*   BUTTONS */
+.opalbigbutton{
+  font-size: 18px;
+  padding: 5px 30px;
+  border: 2px solid #0071a1;
+  border-radius: 5px;
+  border-style: solid;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  min-height: 28px;
+  margin: 0;
+  line-height: 2;
+  display: inline-block;
+  cursor:pointer;
+}
+
+.opalbigbutton.opalscannow{
+  background:#0071a1;
+  color:#fcfdf9;
+  margin-right:20px;
+}
+.opalbigbutton.opalscannow.deactivated,
+.opalbigbutton.opalscannow.deactivated:hover{
+  cursor:none;
+  background:#95b0bb;
+  color:#fcfdf9;
+  border-color: #95b0bb;
+}
+.opalbigbutton.opalscannow:hover{
+  background: #caeed0;
+  border-color: #01872f;
+  color: #01872f;
+}
+
+.opalbigbutton.opalsend{
+  display:none;
+}
+.opalbigbutton.opalsend.logpresent{
+  background: #74d583;
+  border-color:#74d583;
+  color:#173e25;
+  display: inline-block;
+}
+.opalbigbutton.opalsend.logpresent:hover{
+  background: #caeed0 !important;
+  border-color: #01872f;
+  color: #01872f;
+}
+
+.op_do_a_scanbut{
+  display: inline-block;
+  background: #007cba;
+  padding:3px 10px;
+  color:#fff;
+  border-radius: 3px;
+}
+.op_do_a_scanbut:hover{
+  background: #0071a1;
+  color:#fff;
+}
+
+/** button icons **/
+.opalbigbutton:after{
+      font-family: dashicons;
+      display: inline-block;
+      line-height: 30px;
+      font-weight: 400;
+      width: 20px;
+      height: 20px;
+      margin: 3px 0 0px 20px;
+      float: right;
+      font-size: 30px;
+  }
+
+.opalbigbutton.opalscannow:after{
+  content: "\f311";
+}
+.opalbigbutton.opalsend:after{
+  content: "\f465";
+}
+.opalbigbutton.notagreed {opacity: 0.3;cursor:default;}
+
+.opalbigbutton.opalsend.logpresent.sendingmail,
+.opalbigbutton.opalsend.logpresent.sendingmail:hover{
+  background: #a2c8a8!important;
+  border-color: #a2c8a8;
+  color:#4dA254;
+  cursor: wait;
+}
+#agreetosend{}
+.agreetosendlabel{margin:0 20px 0 10px;}
+/******************************/
+
+
+.opalsitescannerpage .opal_status{
+  display: block;
+  background: #4a514a;
+  color:#dadFda;
+  font-size: 16px;
+  margin:20px 0;
+  position: relative;
+  height:60px;width:100%;
+}
+
+.opalsitescannerpage .opal_infobox {
+	background: #dfc5c5;
+	display: block;
+	padding: 15px;
+	text-align: center;
+	margin-bottom: 20px;
+	border-left: 10px solid #df3e3e;
+}
+.opalsitescannerpage .opal_infobox p{
+  margin:0 0 0 0;
+}
+
+#op_dim_everything{
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  top:0;left:0;
+  z-index: 1;
+}
+
+.opalsitescannerpage .op_alertbox {
+	z-index: 9000;
+	padding: 40px;
+	font-size: 18px;
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: #fafafa;
+	border: 20px solid #dadada;
+	right: 8vw;
+	left: 19vw;
+}
+
+.opalsitescannerpage .op_alertbox_close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 22px;
+	height: 22px;
+	border-radius: 15px;
+	border: 4px solid #333;
+	color: #333;
+	cursor: pointer;
+	background: white;
+	text-align: center;
+	font-weight: 900;
+	line-height: 22px;
+}
+.opalsitescannerpage .op_alertbox h2{
+  margin: 0;
+  padding:0 0 10px 0;
+  line-height: normal;
+}
+.opalsitescannerpage .op_alertbox p {
+  margin:0 0 5px 0;
+  line-height: normal;
+}
+.opalsitescannerpage .op_alertbox.success{
+  background:
+  #74d583;
+  border: 20px solid  #5cb76a;
+}
+.opalsitescannerpage .op_alertbox.fail{
+  background:
+  #df3e3e;
+  color:#ffdfdf;
+  border: 20px solid  #bf0f0f;
+}
+.opalsitescannerpage .opal_status .statusbar{
+  position:absolute;
+  width:1%;
+  height:100%;
+  background: #567c8b;
+  transition: width 0.2s;
+}
+
+.opalsitescannerpage .opal_status .statusmessage {
+  padding:20px;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+
+/* ----- Tabs and panes  ----- */
+.opal_tabber_link{
+  cursor: pointer;
+}
+.opal_pane{
+  padding: 20px 20px 60px 20px;
+  background:#fff;
+  border:2px solid #0071a1;
+  display: none;
+ }
+.opal_pane.active{
+	display: inherit;
+}
+#opalsummary.opal_pane{
+}
+
+.opal_tab_bar{
+  width:100%;
+  height:40px;
+  position:relative;
+  padding-left: 20px;
+}
+
+.opal_tab_bar .opal_tab{
+  display: inline-block;
+  padding: 10px 30px;
+  border:2px solid  rgba(200,200,200,0);
+  margin-right: 4px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-color: #6592a6;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  background: #eee;
+  color:#6592a6;
+  border-color: #6592a6;
+
+}
+.opal_tab_bar .opal_tab.active,
+.opal_tab_bar .opal_tab.active:hover{
+  background: white;
+   border:2px solid #0071a1;
+   border-bottom-color: #fff;
+   color:#0071a1;
+}
+.opal_tab_bar .opal_tab:hover{
+  background: #f9f9fb;
+  color:#6592a6;
+  border-color: #6592a6;
+}
+/***** SCORES *****/
+
+.opalsitescannerpage .score{
+  display: block;position:relative;
+  width:100%;
+  height:60px;
+  background: #dadada;
+}
+.opalsitescannerpage .score span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+.opalscore_wrap{
+  position: relative;
+  width:50%;
+  float:right;
+  padding:0 0 20px 0;
+  margin-left: 20px;
+}
+.opaladvice_wrap{
+  clear:both;
+  margin: 20px 0 0 0 ;
+  border-top:4px solid #f1f1f1;
+  padding:20px;
+}
+.opalscore_wrap .deco{
+  width:10%;height:20px;
+  background:#fafafa;
+  display: inline-block;
+  margin: 0;
+}
+.opalsitescannerpage .scorebar{
+  width:100%;
+  max-width: 1000px;
+  background:#dfdfdf;
+  border-radius: 5px;
+  height:30px;
+  margin-bottom:5px;
+  position: relative;
+}
+.opalsitescannerpage .scorebar .opbar{
+  display:block;
+  position: absolute;box-sizing: border-box;
+  content:'';
+  color:#ffEDEF;
+  width:100%;
+  height:100%;
+  background:#dadada;
+  top:0;left: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding:5px 5px 5px 15px;
+  text-align: left;
+  transition:all 0.9s;
+  font-size: larger;
+}
+.opalsitescannerpage #score-secure .opbar:after{
+    content:'SECURITY';
+}
+.opalsitescannerpage #score-maintain .opbar:after{
+    content:'MAINTENANCE';
+}
+.opalsitescannerpage #score-other .opbar:after{
+    content:'STABILITY & SPEED';
+}
+#opalreportgraph{
+  float: left;
+  width: 30%;
+  padding-right:10px;
+  box-sizing: border-box;
+  min-width:300px;
+ }
+#op_bar_wrapper{
+  padding: 50px 20px;
+  float: left;
+  width: 68%;
+  box-sizing: border-box;
+}
+.opbar.bad{ background:#df3e3e!important;}
+.opbar.ok{ background:#dfa825!important;}
+.opbar.good{ background-color:#49a41e!important;}
+
+/******FULL REPORT BAR GRAPH*******/
+td.opfullscanbar{
+  position: relative;
+  display: block;
+  width: auto;
+}
+td.opfullscanbar .scanbar{
+  content: '';
+  background:  #daa;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: darken;
+}
+
+/***** content styles *****/
+.opalscanner_results h2{
+  font-size: 30px;
+  font-weight: normal;
+  line-height:normal;
+  margin:20px 0 0.3em 0;
+}
+.opalscanner_results p{
+  line-height:normal;
+   margin:0 0 0.7em 0;
+ }
+.opalscanner_results .opal_dimmed{
+  color:#7d8fa1;
+}
+
+/*****  TABLE STYLES *****/
+
+.opalscan_results_table{
+  width:100%;
+  margin: 20px 0 30px 0;
+}
+.opalscan_results_table td,
+.opalscan_results_table th{
+  text-align:left;
+  padding: 8px 15px;
+}
+.opalscan_results_table th{
+  background: #dadada;
+}
+
+.opalscan_results_table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.opalscan_results_table tr td.wpcore:before,
+.opalscan_results_table tr td.plugin:before,
+.opalscan_results_table tr td.server:before,
+.opalscan_results_table tr td.theme:before{
+  font-family: dashicons;
+  padding-right:20px;
+  font-size: 22px;
+  float: left;
+  line-height:initial;
+}
+
+.opalscan_results_table tr td.wpcore:before {content: "\f324"; }
+.opalscan_results_table tr td.plugin:before {content: "\f106"; }
+.opalscan_results_table tr td.server:before {content: "\f332"; }
+.opalscan_results_table tr td.theme:before {content: "\f100"; }
+.opalscan_results_table tr td.warn {border-left: solid 4px red;}
+.opalscan_results_table tr td.inform {border-left: solid 4px orange;}
+
+.scoretotal td{
+  background:#fff;
+  font-weight: bold;
+  border-top: 2px solid  #d5d3d3;
+  font-size: 16px;
+}
+.scoretotal td:first-child{
+  text-align:right;
+  min-width:70%;
+}
+.opalsitescannerpage  .opalbigtable td{
+  font-size: 18px;
+  padding: 15px 20px;
+}
+.op_badbar{border:1px solid red;}
+
+/*****  SPINNY LOADER *****/
+  .lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 5px 0px 0 20px;
+    box-sizing: border-box;
+    border: 20px solid #38a7dd;
+    border-color: #0073aa transparent #567c8b transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+
+
+  @media screen and (max-width: 960px) {
+    .opalsitescannerpage .op_alertbox {
+      right: 4vw;
+      left: 5vw;
+    }
+    .opalbigbutton {
+      margin-top: 10px;
+    }
+    .wp-core-ui .button.bigbutton.opalsend{
+      float: none;
+      margin: 0px;
+    }
+    .opal_tab_bar {
+      height:auto;
+      padding:0px 0 0 0;
+      margin: 0px 0 -2px 0;
+      clear:both;
+      min-width: 330px;
+    }
+    .opal_tab_bar  .opal_tab,
+    .opal_tab_bar .opal_tab.active, {
+      display: block;
+      margin:10px;
+      border-radius: 5px;
+      border-bottom-color: 2px solid #0071a1!important;
+      line-height: normal;
+      padding:10px;
+    }
+    .opalscore_wrap, #op_bar_wrapper {
+        width: 100%;
+      }
+    .opalscan_results_table.opalscan_details_table th:nth-of-type(2),
+    .opalscan_results_table.opalscan_details_table td:nth-of-type(2){
+      display: none;
+    }
+  }
